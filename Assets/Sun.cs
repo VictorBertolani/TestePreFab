@@ -106,7 +106,7 @@ namespace Entropedia
             SunPosition.CalculateSunPosition(time, (double)latitude, (double)longitude, out azi, out alt);
             angles.x = (float)alt * Mathf.Rad2Deg;
             angles.y = (float)azi * Mathf.Rad2Deg;
-          
+
             transform.localRotation = Quaternion.Euler(angles);
             light.intensity = Mathf.InverseLerp(-12, 0, angles.x);
         }
@@ -115,20 +115,20 @@ namespace Entropedia
     }
 
 
-   
+
     public static class SunPosition
     {
         private const double Deg2Rad = Math.PI / 180.0;
         private const double Rad2Deg = 180.0 / Math.PI;
 
-        
+
         public static void CalculateSunPosition(
             DateTime dateTime, double latitude, double longitude, out double outAzimuth, out double outAltitude)
         {
-    
+
             dateTime = dateTime.ToUniversalTime();
 
-           
+
             double julianDate = 367 * dateTime.Year -
                 (int)((7.0 / 4.0) * (dateTime.Year +
                 (int)((dateTime.Month + 9.0) / 12.0))) +
@@ -137,7 +137,7 @@ namespace Entropedia
 
             double julianCenturies = julianDate / 36525.0;
 
-         
+
             double siderealTimeHours = 6.6974 + 2400.0513 * julianCenturies;
 
             double siderealTimeUT = siderealTimeHours +
@@ -145,11 +145,11 @@ namespace Entropedia
 
             double siderealTime = siderealTimeUT * 15 + longitude;
 
-          
+
             julianDate += (double)dateTime.TimeOfDay.TotalHours / 24.0;
             julianCenturies = julianDate / 36525.0;
 
-          
+
             double meanLongitude = CorrectAngle(Deg2Rad *
                 (280.466 + 36000.77 * julianCenturies));
 
@@ -164,7 +164,7 @@ namespace Entropedia
 
             double obliquity = (23.439 - 0.013 * julianCenturies) * Deg2Rad;
 
-              
+
             double rightAscension = Math.Atan2(
                 Math.Cos(obliquity) * Math.Sin(elipticalLongitude),
                 Math.Cos(elipticalLongitude));
@@ -172,7 +172,7 @@ namespace Entropedia
             double declination = Math.Asin(
                 Math.Sin(rightAscension) * Math.Sin(obliquity));
 
-            
+
             double hourAngle = CorrectAngle(siderealTime * Deg2Rad) - rightAscension;
 
             if (hourAngle > Math.PI)
@@ -184,7 +184,7 @@ namespace Entropedia
                 Math.Sin(declination) + Math.Cos(latitude * Deg2Rad) *
                 Math.Cos(declination) * Math.Cos(hourAngle));
 
-        
+
             double aziNom = -Math.Sin(hourAngle);
             double aziDenom =
                 Math.Tan(declination) * Math.Cos(latitude * Deg2Rad) -
@@ -192,11 +192,11 @@ namespace Entropedia
 
             double azimuth = Math.Atan(aziNom / aziDenom);
 
-            if (aziDenom < 0) 
+            if (aziDenom < 0)
             {
                 azimuth += Math.PI;
             }
-            else if (aziNom < 0) 
+            else if (aziNom < 0)
             {
                 azimuth += 2 * Math.PI;
             }
@@ -205,7 +205,7 @@ namespace Entropedia
             outAzimuth = azimuth;
         }
 
-       
+
         private static double CorrectAngle(double angleInRadians)
         {
             if (angleInRadians < 0)

@@ -375,7 +375,9 @@ GameObject:
   - component: {fileID: 410087041}
   - component: {fileID: 410087040}
   - component: {fileID: 410087042}
-  - component: {fileID: 410087043}
+  - component: {fileID: 410087044}
+  - component: {fileID: 410087045}
+  - component: {fileID: 410087046}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -456,7 +458,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20524831, y: 0.72247326, z: 0.24128826, w: -0.61456126}
+  m_LocalRotation: {x: -0.10273361, y: 0.68495435, z: 0.098478176, w: 0.7145526}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -486,7 +488,36 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
---- !u!114 &410087043
+--- !u!114 &410087044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410087039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bacf917730cb86b4aa766e014fc74e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sun: {fileID: 0}
+  year: 2025
+  month: 3
+  day: 26
+--- !u!114 &410087045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410087039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c5b36868d58d0a4aa455af023738911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sun: {fileID: 0}
+--- !u!114 &410087046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -498,11 +529,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc85da8aaf572f4186cd2f7e716e65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  longitude: -45
+  longitude: 150
   latitude: 0
-  hour: 20
-  minutes: 40
-  timeSpeed: 25
+  hour: 16
+  minutes: 0
+  timeSpeed: 1
   frameSteps: 1
 --- !u!1 &583771186
 GameObject:
