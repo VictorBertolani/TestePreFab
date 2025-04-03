@@ -396,7 +396,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -458,13 +458,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.10273361, y: 0.68495435, z: 0.098478176, w: 0.7145526}
+  m_LocalRotation: {x: -0.037491035, y: 0.15824527, z: -0.006012934, w: -0.98666954}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 91.672, y: -211.883, z: -109.76999}
+  m_LocalEulerAnglesHint: {x: 152.002, y: -198.237, z: -180}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,10 +500,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bacf917730cb86b4aa766e014fc74e82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sun: {fileID: 0}
+  sun: {fileID: 410087046}
   year: 2025
-  month: 3
-  day: 26
+  month: 6
+  day: 14
 --- !u!114 &410087045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,7 +516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c5b36868d58d0a4aa455af023738911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sun: {fileID: 0}
+  sun: {fileID: 410087046}
 --- !u!114 &410087046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,10 +529,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc85da8aaf572f4186cd2f7e716e65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  longitude: 150
-  latitude: 0
-  hour: 16
-  minutes: 0
+  longitude: 0
+  latitude: 70
+  hour: 19
+  minutes: 41
   timeSpeed: 1
   frameSteps: 1
 --- !u!1 &583771186
